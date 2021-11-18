@@ -31,7 +31,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer">
-                Hak Cipta © <script>document.write(new Date().getFullYear());</script> GPR TV
+                Hak Cipta © <script>document.write(new Date().getFullYear());</script> Fanres
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

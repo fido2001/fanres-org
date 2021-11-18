@@ -9,17 +9,17 @@
                 <b>
                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                     <!-- Dark Logo icon -->
-                    <img src="https://www.gprtv.id/frontend/./asset/img/gpr-logo.png" alt="homepage" class="dark-logo" />
+                    <img src="" alt="homepage" class="dark-logo" />
                     <!-- Light Logo icon -->
-                    <img src="{{ URL('/frontend') }}/img/logo-gpr.png" style="width: 60px" alt="homepage" class="light-logo" />
+                    {{-- <img src="{{ URL('/frontend') }}/img/logo-gpr.png" style="width: 60px" alt="homepage" class="light-logo" /> --}}
                 </b>
                 <!--End Logo icon -->
                 <!-- Logo text -->
                 <span class="text-white" style="font-weight: 700">
                 <!-- dark Logo text -->
-                <img src="https://www.gprtv.id/frontend/./asset/img/gpr-logo.png" alt="homepage" class="dark-logo" />
+                <img src="" alt="homepage" class="dark-logo" />
                 <!-- Light Logo text -->    
-                <b>GPR</b> TV</span> </a>
+                <b>Fanres</b> ORG</span> </a>
         </div>
         <!-- ============================================================== -->
         <!-- End Logo -->
@@ -58,7 +58,7 @@
                                 <div class="dw-user-box">
                                     <div class="u-img"><img src="{{ asset('assets/images/users/1.jpg') }}" alt="user"></div>
                                     <div class="u-text">
-                                        <h4>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h4>
+                                        <h4>{{ Auth::user()->name }}</h4>
                                         <p class="text-muted">{{ Auth::user()->email }}</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                 </div>
                             </li>

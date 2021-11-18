@@ -6,8 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ URL('/frontend') }}/img/logo-gpr.png">
-    <title>GPR TV</title>
+    {{-- <link rel="icon" type="image/png" sizes="16x16" href="{{ URL('/frontend') }}/img/logo-gpr.png"> --}}
+    <title>FANRES</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL('/') }}/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{url('/')}}/assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">

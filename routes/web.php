@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
+    Route::get('/admin', [HomeController::class, 'admin'])->name('admin.index');
+    Route::resource('category', App\Http\Controllers\CategoryController::class);
+    Route::resource('article', App\Http\Controllers\ArticleController::class);
 });
 
 Auth::routes();
