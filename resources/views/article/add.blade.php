@@ -57,7 +57,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <h4 class="card-title">Thumbnail</h4>
                                         <label for="input-file-now">Perhatian! file harus berupa jpg, jpeg, png dan ukuran maksimal 2mb</label><br>
@@ -66,6 +66,21 @@
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Tags</label>
+                                        <select name="tags[]" class="select2 select2-multiple @error('tags') is-invalid @enderror" style="width: 100%" multiple="multiple" data-placeholder="Pilih Tags">
+                                            @foreach ($dataTag as $tag)
+                                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('tags')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                 </div>

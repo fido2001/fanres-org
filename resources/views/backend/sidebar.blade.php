@@ -42,6 +42,9 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('category.index') }}">Kategori</a></li>
                     </ul>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('tag.index') }}">Tag</a></li>
+                    </ul>
                 </li>
                 {{-- <li>
                     <a href="{{ route('video.index') }}" aria-expanded="false"><i class="fa fa-youtube"></i><span class="hide-menu">Video Youtube</span></a>

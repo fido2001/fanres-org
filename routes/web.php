@@ -20,6 +20,7 @@ Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
     Route::get('/admin', [HomeController::class, 'admin'])->name('admin.index');
     Route::resource('category', App\Http\Controllers\CategoryController::class);
     Route::resource('article', App\Http\Controllers\ArticleController::class);
+    Route::resource('tag', App\Http\Controllers\TagController::class);
 });
 
 Auth::routes();

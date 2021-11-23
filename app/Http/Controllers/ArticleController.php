@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -27,7 +28,8 @@ class ArticleController extends Controller
     public function create()
     {
         return view('article.add', [
-            'dataKategori' => Category::all()
+            'dataKategori' => Category::all(),
+            'dataTag' => Tag::all()
         ]);
     }
 
@@ -51,16 +53,17 @@ class ArticleController extends Controller
         $name = \Str::random(8) . '.' . $fileType;
 
         $attr = $request->all();
+
         $slug = \Str::slug(request('title'));
-        $attr['user_id'] = auth()->id();
         $attr['slug'] = $slug;
 
         $new_cover = \Storage::putFileAs('cover', $request->file('thumbnail'), $name);
-        // if ($request->file(cover)) {
-        // }
         $attr['cover'] = $new_cover;
+        $attr['category_id'] = $request->category_id;
 
-        Article::create($attr);
+        $article = auth()->user()->articles()->create($attr);
+        $article->tags()->attach($request->tags);
+
 
         return redirect()->route('article.index')->with('success', 'Data Artikel berhasil ditambahkan');
     }
@@ -87,6 +90,7 @@ class ArticleController extends Controller
         return view('article.edit', [
             'article' => $article,
             'dataKategori' => Category::get(),
+            'dataTag' => Tag::get()
         ]);
     }
 
@@ -123,6 +127,7 @@ class ArticleController extends Controller
         $attr['slug'] = $slug;
 
         $article->update($attr);
+        $article->tags()->sync(request('tags'));
 
         return redirect()->route('article.index')->with('success', 'Data article berhasil diubah');
     }
