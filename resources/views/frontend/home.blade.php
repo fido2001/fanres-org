@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Trending Area Start -->
-<div class="container">
+{{-- <div class="container">
     <div class="row">
         <div class="col-lg-12">
             <span class="trending-tittle" style="padding-bottom: 1px">
@@ -19,7 +19,7 @@
             </span>
         </div>
     </div>
-</div>
+</div> --}}
 <div class="recent-articles">
     <div class="container">
         <div class="recent-wrapper">

@@ -42,10 +42,12 @@ class ArticleController extends Controller
         $request->validate([
             'title' => 'required|max:100',
             'body' => 'required',
-            'cover' => 'required|mimes:jpeg,png,jpg,svg|max:2048'
+            'thumbnail' => 'required|mimes:jpeg,png,jpg,svg|max:2048'
         ]);
 
-        $fileType = $request->file('image')->extension();
+        // dd($request->all());
+
+        $fileType = $request->file('thumbnail')->extension();
         $name = \Str::random(8) . '.' . $fileType;
 
         $attr = $request->all();
@@ -53,9 +55,9 @@ class ArticleController extends Controller
         $attr['user_id'] = auth()->id();
         $attr['slug'] = $slug;
 
-        if ($request->file(cover)) {
-            $new_cover = \Storage::putFileAs('cover', $request->file('cover'), $name);
-        }
+        $new_cover = \Storage::putFileAs('cover', $request->file('thumbnail'), $name);
+        // if ($request->file(cover)) {
+        // }
         $attr['cover'] = $new_cover;
 
         Article::create($attr);

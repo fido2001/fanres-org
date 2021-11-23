@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
     Route::get('/admin', [HomeController::class, 'admin'])->name('admin.index');
@@ -25,5 +23,7 @@ Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
 });
 
 Auth::routes();
+
+Route::get('/', [FrontendController::class, 'home']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

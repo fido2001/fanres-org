@@ -7,10 +7,10 @@
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-5 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0">Video</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0">Artikel</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ URL('/') }}">Home</a></li>
-                <li class="breadcrumb-item active">Video</li>
+                <li class="breadcrumb-item active">Artikel</li>
             </ol>
         </div>
     </div>
@@ -28,9 +28,8 @@
                         </div>
                     </div>
                 @endif
-                <h4 class="card-title">Data Video</h4>
-                <a href="{{ route('video.create')}}"><button class="btn btn-primary">Tambah Data Video YouTube</button></a>
-                <a href="{{ route('file.create')}}"><button class="btn btn-primary">Tambah Data Video</button></a>
+                <h4 class="card-title">Data Artikel</h4>
+                <a href="{{ route('article.create')}}"><button class="btn btn-primary">Tambah Data Article</button></a>
                 <div class="table-responsive m-t-20">
                     <table id="myTable" class="table table-bordered table-striped">
                         <thead>
@@ -43,15 +42,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dataVideo as $no => $video)
+                            @foreach ($dataArticle as $no => $article)
                             <tr>
                                 <td>{{ $no+1 }}</td>
-                                <td>{{ $video->title }}</td>
-                                <td>{{ $video->category->name }}</td>
+                                <td>{{ $article->title }}</td>
+                                <td>{{ $article->category->name }}</td>
                                 <td>
-                                    <a href="{{ route('video.edit', $video->id) }}" class="badge badge-info">Edit</a>
-                                    <a href="#" data-id="{{ $video->id }}" class="badge badge-danger sa-params">
-                                        <form action="{{ route('video.destroy', $video->id) }}" id="delete{{ $video->id }}" method="POST">
+                                    <a href="{{ route('article.edit', $article->id) }}" class="badge badge-info">Edit</a>
+                                    <a href="#" data-id="{{ $article->id }}" class="badge badge-danger sa-params">
+                                        <form action="{{ route('article.destroy', $article->id) }}" id="delete{{ $article->id }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         </form>

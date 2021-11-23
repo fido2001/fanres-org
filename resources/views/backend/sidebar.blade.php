@@ -40,14 +40,14 @@
                 <li>
                     <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-cog"></i><span class="hide-menu">Master Data</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{ route('category.index') }}">Category</a></li>
+                        <li><a href="{{ route('category.index') }}">Kategori</a></li>
                     </ul>
                 </li>
                 {{-- <li>
                     <a href="{{ route('video.index') }}" aria-expanded="false"><i class="fa fa-youtube"></i><span class="hide-menu">Video Youtube</span></a>
                 </li> --}}
                 <li>
-                    <a href="{{ route('article.index') }}" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Article</span></a>
+                    <a href="{{ route('article.index') }}" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Artikel</span></a>
                 </li>
             </ul>
         </nav>
