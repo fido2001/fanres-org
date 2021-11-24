@@ -8,7 +8,7 @@
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-3 mt-2">
                             <div class="logo">
-                                <a href="{{ URL('/') }}"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" alt="" style="width: 175px" class="rounded"></a>
+                                <a href="{{ URL('/') }}"><img src="{{ URL('/frontend') }}/img/logo-fanres2.jpeg" alt="" style="width: 150px; height:auto; border:2pt orange solid" class="rounded"></a>
                             </div>
                         </div>
                         <div class="col-xl-9 col-lg-9 col-md-9">
@@ -44,34 +44,36 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 header-flex">
                             <!-- sticky -->
                                 <div class="sticky-logo">
-                                    <a href="index.html"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" alt="" style="width: 80px; margin-top:10px; margin-bottom:10px; border:0.5pt white solid" class="rounded"></a>
+                                    <a href="index.html"><img src="{{ URL('/frontend') }}/img/logo-fanres2.jpeg" alt="" style="width: 90px; margin-top:3px; margin-bottom:px; border:1pt orange solid" class="rounded"></a>
                                 </div>
                             <!-- Main-menu -->
                             <div class="main-menu d-none d-md-block">
                                 <nav>                  
                                     <ul id="navigation">    
                                         <li><a href="{{ URL('/') }}" class="@if (Request::segment(1) == '')
-                                            active @endif">BERANDA</a></li>
-                                        <li><a href="{{ URL('/#live') }}" class="rainbow_text_animated">LIVE</a></li>
-                                        <li><a href="{{ route('all.video') }}" class="@if (Request::segment(1) == 'videos')
-                                            active @endif">VIDEO</a>
+                                            active @endif">HOME</a></li>
+                                        <li><a href="{{ route('all.article') }}" class="@if (Request::segment(1) == 'articles')
+                                            active @endif">ARTICLE</a>
                                             <ul class="submenu">
-                                                <li><a href="{{ route('all.video') }}">SEMUA VIDEO</a>
+                                                <li><a href="{{ route('all.article') }}">ALL ARTICLES</a>
                                                 @foreach ($dataKategori as $kategori)
                                                 <li><a href="{{ route('show.category', $kategori->slug) }}">{{ Str::upper($kategori->name) }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('jadwal') }}" class="@if (Request::segment(1) == 'jadwalacara')
-                                            active @endif">JADWAL ACARA</a></li>
-                                        <li><a href="{{ route('aboutus') }}" class="@if (Request::segment(1) == 'tentangkami')
-                                            active @endif">TENTANG KAMI</a></li>
+                                        <li><a href="https://journal.fanres.org/index.php/IJFANRES" target="_blank">JOURNAL</a></li>
+                                        <li><a href="" class="@if (Request::segment(1) == 'membership')
+                                            active @endif">MEMBERSHIP</a></li>
+                                        <li><a href="{{ route('aboutus') }}" class="@if (Request::segment(1) == 'about-us')
+                                            active @endif">ABOUT US</a></li>
+                                        <li><a href="{{ route('contact') }}" class="@if (Request::segment(1) == 'contact')
+                                            active @endif">CONTACT</a></li>
                                         @guest
-                                        <li class="f-right"><a href="{{ route('login') }}">MASUK</a></li>
+                                        <li class="f-right"><a href="{{ route('login') }}">LOGIN</a></li>
                                         @else
-                                        <li class="f-right"><a href="#">Hai, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
+                                        <li class="f-right"><a href="#">Hello, {{ Auth::user()->name }}</a>
                                             <ul class="submenu">
-                                                @if (Auth::user()->level == 'admin')
+                                                @if (Auth::user()->role == 'admin')
                                                 <li><a href="{{ route('admin.index') }}">Admin Dashboard</a></li>
                                                 @endif
                                                 <li><a href="{{ route('logout') }}"
@@ -90,8 +92,8 @@
                                         <li class="header-right-btn f-right d-none d-lg-block" style="margin-top: 8px">
                                             <i class="fas fa-search special-tag" style="color:white"></i>
                                             <div class="search-box">
-                                                <form action="{{ route('search.video') }}" method="GET">
-                                                    <input name="q" type="text" placeholder="Cari">
+                                                <form action="{{ route('search.article') }}" method="GET">
+                                                    <input name="q" type="text" placeholder="Search">
                                                     {{-- <button type="submit" class="btn btn-outline-info">Cari</button> --}}
                                                 </form>
                                             </div>

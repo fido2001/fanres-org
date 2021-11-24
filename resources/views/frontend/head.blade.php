@@ -1,11 +1,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>GPR TV | Kementerian Komunikasi dan Informatika</title>
+    <title>@yield('title') | Food, Agriculture, and Natural Resource</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/png" href="{{ URL('/frontend') }}/img/logo-gpr.png">
+    <link rel="shortcut icon" type="image/png" href="https://fanres.org/web/wp-content/uploads/2019/03/cropped-Untitled-1-180x180.png">
 
     <!-- CSS here -->
         <link rel="stylesheet" href="{{ URL('/frontend') }}/css/bootstrap.min.css">

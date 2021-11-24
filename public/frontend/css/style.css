@@ -153,7 +153,7 @@
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: normal;
     font-style: normal
 }
@@ -164,7 +164,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #000;
     margin-top: 0px;
     font-style: normal;
@@ -173,8 +173,8 @@ h6 {
 }
 
 p {
-    font-family: "Poppins", sans-serif;
-    /* color: #506172; */
+    font-family: "Roboto", sans-serif;
+    color: #506172;
     font-size: 16px;
     line-height: 30px;
     margin-bottom: 15px;
@@ -450,7 +450,7 @@ hr {
     top: 0;
     width: 100%;
     height: 100%;
-    /* background: #e6373d; */
+    background: #e6373d;
     z-index: 1;
     border-radius: 5px;
     transition: transform 0.5s;
@@ -607,7 +607,7 @@ hr {
     -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
     animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
     -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
-    background: #fff;
+    background: #ff7530;
 }
 
 .header-flex.sticky-flex {
@@ -2663,6 +2663,7 @@ hr {
 }
 
 .main-header .main-menu ul li a {
+    color: #fff;
     font-weight: 500;
     padding: 10px 19px;
     display: block;
@@ -2688,7 +2689,7 @@ hr {
 }
 
 .main-header .main-menu ul li:hover>a {
-    color: #00a2e9
+    background-color: #ec2028
 }
 
 .main-header .main-menu ul ul.submenu {
@@ -2701,7 +2702,7 @@ hr {
     opacity: 0;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
     padding: 17px 0;
-    border-top: 5px solid #00a2e9;
+    border-top: 5px solid #fc3f00;
     -webkit-transition: all .3s ease-out 0s;
     -moz-transition: all .3s ease-out 0s;
     -ms-transition: all .3s ease-out 0s;
@@ -2758,7 +2759,8 @@ hr {
 }
 
 .header-sticky.sticky-bar.sticky .main-menu ul>li>a {
-    padding: 22px 15px;
+    padding: 15px 15px;
+    color: white;
 }
 
 .header-sticky.sticky-bar.sticky .main-menu ul ul.submenu>li>a {
@@ -3614,7 +3616,9 @@ hr {
 
 .recent-articles .single-recent .what-img img {
     border-radius: 6px;
-    width: 100%
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
 }
 
 .recent-articles .single-recent .what-cap {
@@ -5575,7 +5579,7 @@ hr {
     z-index: 1042;
     overflow: hidden;
     position: fixed;
-    background: #070027;
+    background: #4A3600;
     opacity: 0.6
 }
 

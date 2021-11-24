@@ -60,22 +60,6 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label">Instansi</label>
-                                        <select name="instansi_id" class="select2 @error('instansi_id') is-invalid @enderror" style="width: 100%">
-                                            <option disabled selected>Pilih Salah Satu</option>
-                                            @foreach ($dataInstansi as $Instansi)
-                                            <option {{ $Instansi->id == $video->instansi_id ? 'selected' : '' }} value="{{ $Instansi->id }}">{{ $Instansi->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('instansi_id')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
                                         <label class="control-label">Tags</label>
                                         <select name="tags[]" class="select2 select2-multiple @error('tags') is-invalid @enderror" style="width: 100%" multiple="multiple" data-placeholder="Pilih Tags">
                                             @foreach ($video->tags as $tag)
@@ -142,6 +126,7 @@
 
 @push('custom-js')
 <script src="{{ URL('/') }}/assets/plugins/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
+<script src="{{ url('/') }}/assets/plugins/dropify/dist/js/dropify.min.js"></script>
 <script src="{{ URL('/') }}/assets/plugins/summernote/dist/summernote.min.js"></script>
 @endpush
 
@@ -183,6 +168,48 @@
             templateResult: formatRepo, // omitted for brevity, see the source of this page
             templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
         });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        // Basic
+        $('.dropify').dropify();
+
+        // Translated
+        $('.dropify-fr').dropify({
+            messages: {
+                default: 'Glissez-déposez un fichier ici ou cliquez',
+                replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                remove: 'Supprimer',
+                error: 'Désolé, le fichier trop volumineux'
+            }
+        });
+
+        // Used events
+        var drEvent = $('#input-file-events').dropify();
+
+        drEvent.on('dropify.beforeClear', function(event, element) {
+            return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+        });
+
+        drEvent.on('dropify.afterClear', function(event, element) {
+            alert('File deleted');
+        });
+
+        drEvent.on('dropify.errors', function(event, element) {
+            console.log('Has Errors');
+        });
+
+        var drDestroy = $('#input-file-to-destroy').dropify();
+        drDestroy = drDestroy.data('dropify')
+        $('#toggleDropify').on('click', function(e) {
+            e.preventDefault();
+            if (drDestroy.isDropified()) {
+                drDestroy.destroy();
+            } else {
+                drDestroy.init();
+            }
+        })
     });
 </script>
 <script>

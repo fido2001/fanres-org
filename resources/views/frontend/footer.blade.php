@@ -4,10 +4,10 @@
         <div class="container">
             <div class="row d-flex justify-content-start">
                 <div class="col-lg-2 mr-70">
-                    <a href="{{ URL('/') }}"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" style="width: 200px" class="rounded" alt=""></a>
+                    <a href="{{ URL('/') }}"><img src="{{ URL('/frontend') }}/img/logo-fanres2.jpeg" style="width: 200px; margin-bottom:10px" class="rounded" alt=""></a>
                 </div>
                 <div class="col-lg-6">
-                    <p style="color: #fafafa">GPRTV.id adalah Government Public Relations Televisi yang dikelola untuk menjalankan amanat Instruksi Presiden Nomor 9 tahun 2015 tentang Pengelolaan Komunikasi Publik.</p>
+                    <p style="color: #fafafa">FANRes.org is Food, Agriculture, and Natural Resource website platform.</p>
                 </div>
                 {{-- <div class="col-lg-2"> --}}
                     {{-- <h4 style="color: #fafafa">Pengunjung</h4> --}}
@@ -32,7 +32,7 @@
                         <a href="https://wa.me/62818180302"><i class="fab fa-whatsapp" style="font-size: 20px"></i></a>
                         <a href="mailto:gprtv@mail.kominfo.go.id"><i class="far fa-envelope" style="font-size: 20px"></i></a>
                         <div class="footer-copy-right f-right">
-                            <p style="color: #afafaf">Hak Cipta &copy; <script>document.write(new Date().getFullYear());</script> GPR TV</p>
+                            <p style="color: #afafaf">Copyright &copy; <script>document.write(new Date().getFullYear());</script> FANRes </p>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
             </div>
         </div>
     </div> --}}
-    <div class="footer-bottom-area">
+    {{-- <div class="footer-bottom-area">
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
                 <ul class="list-inline" style="margin: 2px auto; display:flex; flex-wrap: wrap; justify-content:center">
@@ -104,6 +104,6 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> --}}
 <!-- Footer End-->
 </footer>
